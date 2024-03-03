@@ -1,0 +1,53 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+void calculate(int n,int k)
+{
+    int result,check=0,result1,check1=0,result2;
+   int check2=0;
+   for(int i=1;i<=n;i++)
+   {
+       for(int j=i+1;j<=n;j++)
+       {
+           result=i&j;
+           result1=i|j;
+           if(result<k)
+           {
+               if(check<result)
+               {
+                   check=result;
+               }
+           }
+           result1=i|j;
+           if(result1<k)
+           {
+              
+               if(check1<result1)
+               {
+                   check1=result1;
+               }
+           }
+           result2=i^j;
+            if(result2<k)
+           {
+             
+               if(check2<result2)
+               {
+                   check2=result2;
+               }
+           }
+       }
+       
+   }
+  
+   printf("%d\n",check);
+   printf("%d\n",check1);
+   printf("%d",check2);
+}
+int main() {
+    // Write C code here
+   
+ int n,k;
+ scanf("%d %d",&n,&k);
+ calculate(n,k);
+    return 0;
+}
